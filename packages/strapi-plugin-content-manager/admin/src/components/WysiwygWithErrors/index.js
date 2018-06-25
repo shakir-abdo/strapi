@@ -92,7 +92,6 @@ class WysiwygWithErrors extends React.Component { // eslint-disable-line react/p
       value,
     } = this.props;
     const handleBlur = isFunction(onBlur) ? onBlur : this.handleBlur;
-
     let spacer = !isEmpty(inputDescription) ? <InputSpacer /> : <div />;
 
     if (!noErrorsDescription && !isEmpty(this.state.errors)) {

@@ -7,7 +7,7 @@ export const SELECT_OPTIONS = [
   { id: 'components.Wysiwyg.selectOptions.H5', value: '#####' },
   { id: 'components.Wysiwyg.selectOptions.H6', value: '######' },
 ];
-
+  
 export const CONTROLS = [
   [
     {

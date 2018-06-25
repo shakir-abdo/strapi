@@ -1,1 +1,15 @@
-{}
+{
+  "product": {
+    "attributes": {
+      "name": {
+        "appearance": ""
+      },
+      "wysiwyg": {
+        "appearance": "WYSIWYG"
+      },
+      "json": {
+        "appearance": ""
+      }
+    }
+  }
+}
