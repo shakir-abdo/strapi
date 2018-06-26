@@ -1,0 +1,62 @@
+{
+  "name": "strapi-ui-inputs",
+  "version": "3.0.0-alpha.12.5",
+  "description": "Inputs Components built for Strapi",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "webpack",
+    "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js"
+  },
+  "keywords": [
+    "Strapi",
+    "Inputs"
+  ],
+  "author": "Strapi team",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^8.6.3",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "bootstrap": "^4.1.1",
+    "classnames": "^2.2.6",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "image-webpack-loader": "^4.3.1",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
+    "node-sass": "^4.9.0",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-focus": "^3.0.0",
+    "postcss-loader": "^2.1.5",
+    "postcss-reporter": "^5.0.0",
+    "postcss-smart-import": "^0.7.6",
+    "precss": "^3.1.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-datetime": "^2.14.0",
+    "react-dom": "^16.4.1",
+    "react-intl": "^2.4.0",
+    "react-loadable": "^5.4.0",
+    "react-router-dom": "^4.3.1",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1"
+  },
+  "peerDependencies": {
+    "react": "^16.4.1"
+  },
+  "dependencies": {
+    "webpack": "^3.12.0"
+  }
+}

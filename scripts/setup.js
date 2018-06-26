@@ -65,6 +65,9 @@ watcher('📦  Linking strapi-utils...', 'npm link');
 shell.cd('../strapi-lint');
 watcher('📦  Linking strapi-lint', 'npm link');
 
+shell.cd('../strapi-ui-inputs');
+watcher('📦  Linking strapi-ui-inputs', 'npm link');
+
 shell.cd('../strapi-generate');
 watcher('', 'npm install ../strapi-utils');
 watcher('📦  Linking strapi-generate...', 'npm link');
@@ -139,6 +142,7 @@ watcher('📦  Linking strapi-plugin-users-permissions...', 'npm link --no-optio
 
 shell.cd('../strapi-plugin-content-manager');
 watcher('', 'npm install ../strapi-helper-plugin --no-optional');
+watcher('', 'npm install ../strapi-ui-inputs --no-optional');
 shell.rm('-f', 'package-lock.json');
 watcher('📦  Linking strapi-plugin-content-manager...', 'npm link --no-optional', false);
 

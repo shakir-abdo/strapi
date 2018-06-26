@@ -131,12 +131,29 @@ const foldersToInclude = [path.join(adminPath, 'admin', 'src')]
     plugins.src.reduce((acc, current) => {
       acc.push(path.resolve(appPath, 'plugins', current, 'admin', 'src'), plugins.folders[current]);
 
+      try {
+        fs.accessSync(path.resolve(appPath, 'plugins', current, 'node_modules', 'strapi-ui-inputs', 'lib'));
+        acc.push(path.resolve(appPath, 'plugins', current, 'node_modules', 'strapi-ui-inputs', 'lib'));
+      } catch(err) {
+        // Silent
+      }
+
       return acc;
     }, []),
   )
   .concat([path.join(adminPath, 'node_modules', 'strapi-helper-plugin', 'lib', 'src')]);
 
 module.exports = options => {
+  const currentPath = process.env.PWD;
+  
+  if (process.env.npm_lifecycle_event !== 'start') {
+    try {
+      fs.accessSync(path.resolve(currentPath, 'node_modules', 'strapi-ui-inputs', 'lib'));
+      foldersToInclude.push(path.join(currentPath, 'node_modules', 'strapi-ui-inputs', 'lib'));
+    } catch(err) {
+      // Silent
+    }
+  }
   // The disable option is only for production
   // Config from https://github.com/facebook/create-react-app/blob/next/packages/react-scripts/config/webpack.config.prod.js
   const extractSass = new ExtractTextPlugin({

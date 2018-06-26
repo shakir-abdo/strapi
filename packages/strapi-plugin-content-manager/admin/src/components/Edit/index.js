@@ -20,7 +20,8 @@ import {
 // You can find these components in either
 // ./node_modules/strapi-helper-plugin/lib/src
 // or strapi/packages/strapi-helper-plugin/lib/src
-import Input from 'components/InputsIndex';
+import Input from 'strapi-ui-inputs';
+// import Input from 'components/InputsIndex';
 
 import InputJSONWithErrors from 'components/InputJSONWithErrors';
 import WysiwygWithErrors from 'components/WysiwygWithErrors';
