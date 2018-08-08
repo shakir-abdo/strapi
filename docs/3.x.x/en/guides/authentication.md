@@ -63,7 +63,7 @@ Strapi comes with the following providers:
 - [Discord](#enabling-discord-provider) 
 - [Facebook](#enabling-facebook-provider)
 - [Google](#enabling-google-provider)
-- [Github](https://github.com/strapi/strapi-examples/blob/master/login-react/doc/github_setup.md)
+- [Github](#enabling-github-provider)
 - [Twitter](https://github.com/strapi/strapi-examples/blob/master/login-react/doc/twitter_setup.md)
 
 [👀   See our complete example with detailed tutorials for each provider (with React)](https://github.com/strapi/strapi-examples/tree/master/login-react)
