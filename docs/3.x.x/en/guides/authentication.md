@@ -60,48 +60,13 @@ $.ajax({
 Thanks to [Grant](https://github.com/simov/grant) and [Purest](https://github.com/simov/purest), you can easily use OAuth and OAuth2
 providers to enable authentication in your application. By default,
 Strapi comes with the following providers: 
-- [Discord](https://github.com/strapi/strapi-examples/blob/master/login-react/doc/discord_setup.md) 
+- [Discord](#enabling-discord-provider) 
 - [Facebook](#enabling-facebook-provider)
 - [Google](https://github.com/strapi/strapi-examples/blob/master/login-react/doc/google_setup.md)
 - [Github](https://github.com/strapi/strapi-examples/blob/master/login-react/doc/github_setup.md)
 - [Twitter](https://github.com/strapi/strapi-examples/blob/master/login-react/doc/twitter_setup.md)
 
 [👀   See our complete example with detailed tutorials for each provider (with React)](https://github.com/strapi/strapi-examples/tree/master/login-react)
-
-### Enabling Facebook Provider
-
-#### Login Flow
-
-![Facebook login flow](../assets/fb_login_flow.png)
-
-#### Steps
-
-To enable Facebook login you need to :
-- Go to the facebook's [developers platform](https://developers.facebook.com/), create a new app and add the facebook login API, and choose the WEB platform.
-- Add the login API
-- Select the Web platform
-- Fill your front-end app URL
-- Under the settings tab set your `Valid OAuth Redirect URIs`, in development you need to fill `https://localhost:1337/connect/facebook/callback`
-
-![Fb setup](../assets/fb_setup.png)
-
-
-Once the Facebook setup part is completed you need to enable the provider in your Strapi project
-
-- Launch your strapi server : `cd my-awesome-project && strapi start` and go to `http://localhost:1337/admin/plugins/users-permissions/providers`
-- Click on the Facebook provider and fill the informations :
-  - Client ID
-  - Client secret
-  - The redirect URL to your front-end app, if you are using the [login-react boilerplate](https://github.com/strapi/strapi-examples/blob/master/login-react) it should be `http://localhost:3000/connect/facebook``
-- Save your settings
-
-![FB strapi setup](../assets/fb_strapi_setup.png)
-
-That's all you should be able to test your new provider instantly!
-
-
-
-
 
 
 ---
@@ -229,3 +194,58 @@ The User object is available to successfully authenticated requests.
 ## Email templates
 
 [See the documentation on GitHub](https://github.com/strapi/strapi/blob/master/packages/strapi-plugin-users-permissions/docs/email-templates.md)
+
+
+## Enabling Discord Provider
+
+Go to the [Discord developers](https://discordapp.com/developers/applications/) and create an app.
+
+Under OAuth2, add the redirect `http://localhost:1337/connect/discord/callback`
+
+![Discord Setup](../assets/discord_setup.png)
+
+
+
+### Strapi Setup
+
+[Go to the Admin](http://localhost:1337/admin/plugins/users-permissions/providers), enable Discord and enter your credentials.
+
+![Admin Discord Setup](../assets/discord_strapi_setup.png)
+
+
+> If you are using [login-react boilerplate](https://github.com/strapi/strapi-examples/blob/master/login-react) go to localhost:3000 and try to sign up with discord
+
+---
+
+## Enabling Facebook Provider
+
+### Login Flow
+
+![Facebook login flow](../assets/fb_login_flow.png)
+
+### Facebook Setup
+
+To enable Facebook login you need to :
+- Go to the facebook's [developers platform](https://developers.facebook.com/), create a new app and add the facebook login API, and choose the WEB platform.
+- Add the login API
+- Select the Web platform
+- Fill your front-end app URL
+- Under the settings tab set your `Valid OAuth Redirect URIs`, in development you need to fill `https://localhost:1337/connect/facebook/callback`
+
+![Fb setup](../assets/fb_setup.png)
+
+
+Once the Facebook setup part is completed you need to enable the provider in your Strapi project.
+
+### Strapi Setup
+
+- Launch your strapi server : `cd my-awesome-project && strapi start` and go to `http://localhost:1337/admin/plugins/users-permissions/providers`
+- Click on the Facebook provider and fill the informations :
+  - Client ID
+  - Client secret
+  - The redirect URL to your front-end app, if you are using the [login-react boilerplate](https://github.com/strapi/strapi-examples/blob/master/login-react) it should be `http://localhost:3000/connect/facebook``
+- Save your settings
+
+![FB strapi setup](../assets/fb_strapi_setup.png)
+
+That's all you should be able to test your new provider instantly!
