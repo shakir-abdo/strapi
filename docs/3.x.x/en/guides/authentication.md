@@ -62,7 +62,7 @@ providers to enable authentication in your application. By default,
 Strapi comes with the following providers: 
 - [Discord](#enabling-discord-provider) 
 - [Facebook](#enabling-facebook-provider)
-- [Google](https://github.com/strapi/strapi-examples/blob/master/login-react/doc/google_setup.md)
+- [Google](#enabling-google-provider)
 - [Github](https://github.com/strapi/strapi-examples/blob/master/login-react/doc/github_setup.md)
 - [Twitter](https://github.com/strapi/strapi-examples/blob/master/login-react/doc/twitter_setup.md)
 
@@ -213,7 +213,7 @@ Under OAuth2, add the redirect `http://localhost:1337/connect/discord/callback`
 ![Admin Discord Setup](../assets/discord_strapi_setup.png)
 
 
-> If you are using [login-react boilerplate](https://github.com/strapi/strapi-examples/blob/master/login-react) go to localhost:3000 and try to sign up with discord
+> If you are using the [login-react boilerplate](https://github.com/strapi/strapi-examples/blob/master/login-react) go to localhost:3000 and try to sign up with discord.
 
 ---
 
@@ -243,9 +243,40 @@ Once the Facebook setup part is completed you need to enable the provider in you
 - Click on the Facebook provider and fill the informations :
   - Client ID
   - Client secret
-  - The redirect URL to your front-end app, if you are using the [login-react boilerplate](https://github.com/strapi/strapi-examples/blob/master/login-react) it should be `http://localhost:3000/connect/facebook``
+  - The redirect URL to your front-end app, if you are using the [login-react boilerplate](https://github.com/strapi/strapi-examples/blob/master/login-react) it should be `http://localhost:3000/connect/facebook`
 - Save your settings
 
 ![FB strapi setup](../assets/fb_strapi_setup.png)
 
-That's all you should be able to test your new provider instantly!
+> If you are using the [login-react boilerplate](https://github.com/strapi/strapi-examples/blob/master/login-react) go to localhost:3000 and try to sign up with Facebook.
+
+---
+
+## Enabling Google Provider
+
+### Google Setup
+
+- Go to the [Google developers console](https://console.developers.google.com/) and create a project.
+- In your app's dashboard click on the `ENABLE API AND SERVICES` button
+- Select the `Google +` API and enable it
+- Then, click on the credentials tab and click on the `Credentials in APIs & Services` link and configure your `consent screen`.
+- Then in the `Create OAuth client ID` screen select the `Web application` option and fill the 
+`Authorized redirect URIs` with `http://localhost:1337/connect/google/callback` (if you are in development mode).
+
+![Google Setup](../assets/google_setup.png)
+
+
+
+### Strapi setup
+
+- Launch your strapi server : `cd my-awesome-project && strapi start` and go to `http://localhost:1337/admin/plugins/users-permissions/providers`
+- Click on the Google provider and fill the informations :
+  - Client ID
+  - Client secret
+  - The redirect URL to your front-end app, if you are using the [login-react boilerplate](https://github.com/strapi/strapi-examples/blob/master/login-react) it should be `http://localhost:3000/connect/google`
+- Save your settings
+
+![Google strapi setup](../assets/google_strapi_setup.png)
+
+> If you are using the [login-react boilerplate](https://github.com/strapi/strapi-examples/blob/master/login-react) go to localhost:3000 and try to sign up with google.
+
