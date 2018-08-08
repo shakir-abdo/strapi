@@ -280,3 +280,37 @@ Once the Facebook setup part is completed you need to enable the provider in you
 
 > If you are using the [login-react boilerplate](https://github.com/strapi/strapi-examples/blob/master/login-react) go to localhost:3000 and try to sign up with google.
 
+
+---
+
+## Enabling Github Provider
+
+
+### Github Setup
+
+> The documentation provided for this provider is made for [login-react boilerplate](https://github.com/strapi/strapi-examples/blob/master/login-react) but it should work the same for any other front-end app.
+
+Before setting up GitHub as a provider you'll need to install [ngrok](https://ngrok.com/2) because GitHub doesn't allow URLS from `localhost`.
+
+- Launch the [login-react boilerplate](https://github.com/strapi/strapi-examples/blob/master/login-react) server `cd react-login-front-end-app && npm start`
+- In your terminal open a ngrok tunnel by running `ngrok http 3000`.
+
+![Ngrok setup](../assets/ngrok_setup.png)
+
+- Go to [GitHub](https://github.com/settings/applications/new) and create a new app.
+
+![GitHub Setup](../assets/github_setup.png)
+
+
+### Strapi Setup
+
+- Launch your strapi server : `cd my-awesome-project && strapi start` and go to `http://localhost:1337/admin/plugins/users-permissions/providers`
+- Click on the Google provider and fill the informations :
+  - Client ID
+  - Client secret
+  - The redirect URL to your front-end app, if you are using the [login-react boilerplate](https://github.com/strapi/strapi-examples/blob/master/login-react) it should be `YOUR_NGROK_URL/connect/github`
+- Save your settings
+
+![GitHub Strapi setup](../assets/github_strapi_setup.png)
+
+> If you are using the [login-react boilerplate](https://github.com/strapi/strapi-examples/blob/master/login-react) go to localhost:3000 and try to sign up with GitHub.
